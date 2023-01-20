@@ -81,13 +81,7 @@ const Caption = forwardRef<HTMLTextAreaElement>((props, ref) => {
           to write your own.
         </p>
         <div className="h-[44px] w-[44px]">
-          <Image
-            src={imageSrc ? imageSrc : ""}
-            width={44}
-            height={44}
-            objectFit="cover"
-            layout="responsive"
-          />
+          <Image alt="img" src={imageSrc ? imageSrc : ""} width={44} height={44} objectFit="cover" layout="responsive"/>
         </div>
         <input type="text" placeholder="Write alt text..." />
       </Accordian>
@@ -99,4 +93,5 @@ const Caption = forwardRef<HTMLTextAreaElement>((props, ref) => {
   );
 });
 
+Caption.displayName = 'Caption'
 export default Caption;

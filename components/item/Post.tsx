@@ -27,7 +27,7 @@ import { CommentType } from "../../models/components";
 import { userAgent } from "next/server";
 import { number } from "minifaker";
 
-const item: React.FC<{
+const Item: React.FC<{
   post: {
     id: string;
     image: string;
@@ -254,4 +254,4 @@ const item: React.FC<{
   );
 };
 
-export default item;
+export default Item;

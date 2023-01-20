@@ -15,7 +15,7 @@ type post = {
   caption: string;
 };
 
-const section: React.FC<{ posts: post[] }> = (props) => {
+const Section: React.FC<{ posts: post[] }> = (props) => {
   const { data: session } = useSession();
   return (
     <main
@@ -37,4 +37,4 @@ const section: React.FC<{ posts: post[] }> = (props) => {
   );
 };
 
-export default section;
+export default Section;

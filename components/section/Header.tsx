@@ -32,13 +32,22 @@ import { ModalActions } from "../../store/modal-slice";
 import { db, storage } from "../../firebase";
 
 // authentication
-
+interface StaticImageData {
+  src: string;
+  height: number;
+  width: number;
+  blurDataURL?: string;
+}
+interface StaticRequire {
+  default: StaticImageData;
+}
+declare type StaticImport = StaticRequire | StaticImageData;
 const Header: React.FC = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const captionTextRef = useRef<HTMLTextAreaElement>(null);
-  const [selectedFile, setSelectedFile] = useState<string | ArrayBuffer | null>(
+  const [selectedFile, setSelectedFile] = useState<string | ArrayBuffer | StaticImport | null>(
     ""
   );
   const [isLoading, setIsLoading] = useState(false);

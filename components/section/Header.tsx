@@ -167,7 +167,7 @@ const Header: React.FC = () => {
               ) : (
                 <div className="w-full">
                   <Image
-                    src={selectedFile}
+                    src={selectedFile ? `${selectedFile}` : ""}
                     alt="upload image"
                     width={530}
                     height={530}

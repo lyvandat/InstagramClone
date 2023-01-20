@@ -38,7 +38,7 @@ const Header: React.FC = () => {
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const captionTextRef = useRef<HTMLTextAreaElement>(null);
-  const [selectedFile, setSelectedFile] = useState<string | ArrayBuffer | StaticImport | null>(
+  const [selectedFile, setSelectedFile] = useState<string | ArrayBuffer | null>(
     ""
   );
   const [isLoading, setIsLoading] = useState(false);

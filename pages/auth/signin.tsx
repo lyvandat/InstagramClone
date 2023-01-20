@@ -136,6 +136,15 @@ const SignIn: NextPage<{ providers: AppProviders }> = (props) => {
     }
   };
 
+  const signInWithGoogle = async (e: React.FormEvent) => {
+      const signInResult = await signIn("google", {
+        // redirect: false,
+        callbackUrl: "/",
+        // email: enteredValue.email,
+        // password: enteredValue.password,
+      });
+  };
+
   if (status === "loading") {
     return (
       <div>
@@ -225,11 +234,12 @@ const SignIn: NextPage<{ providers: AppProviders }> = (props) => {
         {isLoginForm && (
           <div className="text-center mt-4">
             <h5 className="text-gray-600 text-base mb-4">Or Sign In Using</h5>
-            <div className="flex items-center justify-center space-x-3">
+            <div className="flex items-center justify-center space-x-3" onClick={signInWithGoogle}>
               <Image
                 src="https://theplace2b.com.au/wp-content/uploads/2020/09/178-1783296_g-transparent-circle-google-logo-768x768.png"
                 width={40}
                 height={40}
+                alt="img"
               />
             </div>
           </div>

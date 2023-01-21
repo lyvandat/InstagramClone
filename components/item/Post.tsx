@@ -95,8 +95,12 @@ const Item: React.FC<{
   };
 
   const likePost = async (e: React.MouseEvent) => {
+    console.log("click");
     // ref to firestore with auto generated id
+    console.log("uid", session);
     const uid = session!.user!.uid!;
+    console.log(db);
+
     const likesRef = doc(db, "posts", props.post.id, "likes", uid);
 
     if (likeState.hasLiked) {

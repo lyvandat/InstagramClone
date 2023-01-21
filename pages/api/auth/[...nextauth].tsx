@@ -114,7 +114,15 @@ export const authOptions: NextAuthOptions = {
 
       // for sign in with google
       // session.user.uid = token.sub;
+
+      console.log(token);
+      console.log(session);
       session.user!.uid = token?.uid as string;
+
+      if (!session.user.uid) {
+        session.user.uid = token.sub;
+      }
+
       session.user!.image = token?.image as string;
 
       return session;
